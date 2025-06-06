@@ -16,6 +16,10 @@ const translations = {
         'footer-made': 'Made with love for gamers',
         'site-name': 'Online Gaming Center',
         'modal-game-title': 'Game Title',
+        
+        // 搜索相关
+        'search-placeholder': 'Search for your favorite games...',
+        'loading-text': 'Loading Amazing Games...',
 
         // 导航菜单
         'nav-racing': 'Racing Games',
@@ -63,6 +67,49 @@ const translations = {
         'tag-simulation': 'Simulation',
         'tag-shooting': 'Shooting',
         'tag-space': 'Space',
+        'tag-car': 'Car',
+        'tag-drive': 'Drive',
+        'tag-stunt': 'Stunt',
+        'tag-sport': 'Sport',
+        'tag-escape': 'Escape',
+        'tag-gta': 'GTA',
+        'tag-drift': 'Drift',
+        'tag-hunting': 'Hunting',
+        'tag-pixel': 'Pixel',
+        'tag-city': 'City',
+        'tag-burnout': 'Burnout',
+        'tag-police': 'Police',
+        'tag-chase': 'Chase',
+        'tag-monster': 'Monster',
+        'tag-arena': 'Arena',
+        'tag-real': 'Real',
+        'tag-mafia': 'Mafia',
+        'tag-fps': 'FPS',
+        'tag-parkour': 'Parkour',
+        'tag-nights': 'Nights',
+        'tag-stickman': 'Stickman',
+        'tag-top': 'Top',
+        'tag-wrestle': 'Wrestle',
+        'tag-destroy': 'Destroy',
+        'tag-duel': 'Duel',
+        'tag-rooftop': 'Rooftop',
+        'tag-kick': 'Kick',
+        'tag-alien': 'Alien',
+        'tag-clicker': 'Clicker',
+        'tag-idle': 'Idle',
+        'tag-capybara': 'Capybara',
+        'tag-nova': 'Nova',
+        'tag-cookie': 'Cookie',
+        'tag-basket': 'Basket',
+        'tag-hoop': 'Hoop',
+        'tag-farming': 'Farming',
+        'tag-island': 'Island',
+        'tag-flight': 'Flight',
+        'tag-funny': 'Funny',
+        'tag-girl': 'Girl',
+        'tag-html5': 'HTML5',
+        'tag-kids': 'Kids',
+        'tag-mobile': 'Mobile',
 
         // 游戏名称和描述
         'game-apocalypse-truck': 'Apocalypse Truck',
@@ -131,8 +178,88 @@ const translations = {
         'game-owl-rabbit': 'Owl and Rabbit Fashion',
         'game-owl-rabbit-desc': 'Style cute owls and rabbits with fashionable outfits',
         
-        'game-fast-food': 'Fast Food Rush',
-        'game-fast-food-desc': 'Run your own burger restaurant and serve customers',
+        'game-fast-food-rush': 'Fast Food Rush',
+        'game-fast-food-rush-desc': 'Run your own burger restaurant and serve customers',
+        
+        // 新增的模拟游戏
+        'game-farming-island': 'Farming Island',
+        'game-farming-island-desc': 'If you\'ve ever zoned out at work, dreaming about quitting everything and running your own farm on a sunny island… yeah, same.',
+        
+        'game-real-flight-simulator': 'Real Flight Simulator',
+        'game-real-flight-simulator-desc': 'Real Flight Simulator is a realistic game that gives you the ultimate flight experience.',
+        
+        // 新增的赛车游戏
+        'game-madalin-stunt-cars-pro': 'Madalin Stunt Cars Pro',
+        'game-madalin-stunt-cars-pro-desc': 'Are you open to experiencing luxury? The 3D driving game Madalin Stunt Cars Pro features excellent graphics for lifelike experiences.',
+        
+        'game-gta-simulator': 'GTA Simulator',
+        'game-gta-simulator-desc': 'You know that famous GTA video game series, right? Well, meet its online and free version on OnlineGames.io.',
+        
+        'game-escape-car': 'Escape Car',
+        'game-escape-car-desc': 'Do you remember the very first Grand Theft Auto? That old-school, top-down chaos. Think of that and give it a fresh coat of chunky 3D graphics.',
+        
+        'game-drift-hunters-pro': 'Drift Hunters Pro',
+        'game-drift-hunters-pro-desc': 'Can you hear the engine moaning? Drift Hunters Pro is a thrilling 3D game with high-quality graphics for those who are fond of drifting & racing.',
+        
+        'game-pixel-driver': 'Pixel Driver',
+        'game-pixel-driver-desc': 'Sometimes, you just crave something simple. Nothing fancy. No complicated missions or stressful tasks. Just a pixel car, a colorful city, and the freedom to roam.',
+        
+        'game-burnout-city': 'Burnout City',
+        'game-burnout-city-desc': 'Burnout City is a place where the night never ends. The streets of a hill-climbing city will be your playground.',
+        
+        'game-police-chase-drifter': 'Police Chase Drifter',
+        'game-police-chase-drifter-desc': 'Collect money and ride with speed while escaping the police cars. Police Chase Drifter will give you the chance to become a drifter champion.',
+        
+        'game-monster-truck-race-arena': 'Monster Truck Race Arena',
+        'game-monster-truck-race-arena-desc': 'Love giant wheels? You\'re in for a treat. Rev your engines in Monster Truck Race Arena, a 2D racing game where flipping your truck is the fastest way to lose!',
+        
+        'game-edys-car-simulator': 'Edys Car Simulator',
+        'game-edys-car-simulator-desc': 'Do you fancy doing some sightseeing? Edy\'s Car Simulator is a game where you can freely wander the streets!',
+        
+        'game-super-car-driving': 'Super Car Driving',
+        'game-super-car-driving-desc': 'Super Car Driving is an online car game where you get to drive super-performing high-end models like Ferrari, Lamborghini, Porsche and more.',
+        
+        'game-mafia-getaway-cars': 'Mafia Getaway Cars',
+        'game-mafia-getaway-cars-desc': 'Tired of those repetitive police chase games? Want to play as the one who\'s breaking the law? Then get ready to join the mafia in this retro-style car game!',
+        
+        // 新增的动作游戏
+        'game-masked-special-forces': 'Masked Special Forces',
+        'game-masked-special-forces-desc': 'Masked Special Forces is a multiplayer first-person shooter game with a myriad of customization options.',
+        
+        'game-stickman-parkour': 'Stickman Parkour',
+        'game-stickman-parkour-desc': 'Stickman Parkour is an online platformer game that you can play on your browser, embracing the easy-to-learn but hard-to-master mechanics.',
+        
+        'game-five-nights-at-poppy': 'Five Nights at Poppy',
+        'game-five-nights-at-poppy-desc': 'Ever stayed late at school or walked through a dark hallway alone and felt like something was watching you?',
+        
+        'game-stickman-gta-city': 'Stickman GTA City',
+        'game-stickman-gta-city-desc': 'You\'ve been digging the internet for ages, looking for a free GTA game to play on your browser.',
+        
+        'game-get-on-top': 'Get On Top',
+        'game-get-on-top-desc': 'Remember those days when you and your brother used to wrestle for hours until one of you cried and complained to Mom?',
+        
+        'game-stickman-destruction': 'Stickman Destruction',
+        'game-stickman-destruction-desc': 'How many parts can you divide a virtual character into? Stickman Destruction is an action-oriented stickman ragdoll game.',
+        
+        'game-rooftop-duel': 'Rooftop Duel',
+        'game-rooftop-duel-desc': 'Can you handle a rooftop shoot-out with gravity, ragdoll limbs, and a toybox of overpowered weapons?',
+        
+        'game-kick-the-alien': 'Kick the Alien',
+        'game-kick-the-alien-desc': 'Kick the Alien is a wacky clicker game where an evil alien has just arrived to colonize your planet.',
+        
+        // 新增的益智游戏
+        'game-capybara-clicker-pro': 'Capybara Clicker Pro',
+        'game-capybara-clicker-pro-desc': 'Capybara Clicker Pro is an idle clicker game in which you tap on the adorable Capybara to collect Capybara coins.',
+        
+        'game-nova-clicker': 'Nova Clicker',
+        'game-nova-clicker-desc': 'Nova Clicker is an online idle game which starts you off with a single, smiley Nova, its name is FreezeNova.',
+        
+        'game-cookie-clicker-pro': 'Cookie Clicker Pro',
+        'game-cookie-clicker-pro-desc': 'Love cookies? Want to create the biggest cookie empire the internet has ever seen? Then Cookie Clicker Pro is exactly your game!',
+        
+        // 新增的街机游戏
+        'game-basket-hoop': 'Basket Hoop',
+        'game-basket-hoop-desc': 'In Basket Hoop, gravity is your only challenge, and tapping is your sole weapon.',
         
         // 搜索相关
         'search-placeholder': 'Search for your favorite games...',
@@ -165,6 +292,10 @@ const translations = {
         'footer-made': '为游戏玩家用心制作',
         'site-name': '在线游戏中心',
         'modal-game-title': '游戏标题',
+        
+        // 搜索相关
+        'search-placeholder': '搜索您喜爱的游戏...',
+        'loading-text': '正在加载精彩游戏...',
 
         // 导航菜单
         'nav-racing': '赛车游戏',
@@ -212,6 +343,49 @@ const translations = {
         'tag-simulation': '模拟',
         'tag-shooting': '射击',
         'tag-space': '太空',
+        'tag-car': '汽车',
+        'tag-drive': '驾驶',
+        'tag-stunt': '特技',
+        'tag-sport': '运动',
+        'tag-escape': '逃脱',
+        'tag-gta': 'GTA',
+        'tag-drift': '漂移',
+        'tag-hunting': '狩猎',
+        'tag-pixel': '像素',
+        'tag-city': '城市',
+        'tag-burnout': '燃烧',
+        'tag-police': '警察',
+        'tag-chase': '追逐',
+        'tag-monster': '怪物',
+        'tag-arena': '竞技场',
+        'tag-real': '真实',
+        'tag-mafia': '黑手党',
+        'tag-fps': '第一人称射击',
+        'tag-parkour': '跑酷',
+        'tag-nights': '夜晚',
+        'tag-stickman': '火柴人',
+        'tag-top': '顶部',
+        'tag-wrestle': '摔跤',
+        'tag-destroy': '毁灭',
+        'tag-duel': '决斗',
+        'tag-rooftop': '屋顶',
+        'tag-kick': '踢',
+        'tag-alien': '外星人',
+        'tag-clicker': '点击器',
+        'tag-idle': '闲置',
+        'tag-capybara': '水豚',
+        'tag-nova': '新星',
+        'tag-cookie': '曲奇',
+        'tag-basket': '篮球',
+        'tag-hoop': '框',
+        'tag-farming': '农场',
+        'tag-island': '岛屿',
+        'tag-flight': '飞行',
+        'tag-funny': '有趣',
+        'tag-girl': '女生',
+        'tag-html5': 'HTML5',
+        'tag-kids': '儿童',
+        'tag-mobile': '手机',
 
         // 游戏名称和描述
         'game-apocalypse-truck': '末日卡车',
@@ -280,8 +454,88 @@ const translations = {
         'game-owl-rabbit': '猫头鹰兔子时装',
         'game-owl-rabbit-desc': '为可爱的猫头鹰和兔子搭配时装',
         
-        'game-fast-food': '快餐店大忙',
-        'game-fast-food-desc': '经营自己的汉堡店，服务顾客',
+        'game-fast-food-rush': '快餐店大忙',
+        'game-fast-food-rush-desc': '经营自己的汉堡店，服务顾客',
+        
+        // 新增的模拟游戏
+        'game-farming-island': '农场岛',
+        'game-farming-island-desc': '如果你曾经在工作时走神，梦想着放弃一切在阳光明媚的岛屿上经营自己的农场...是的，我们都有过。',
+        
+        'game-real-flight-simulator': '真实飞行模拟器',
+        'game-real-flight-simulator-desc': '真实飞行模拟器是一款让你获得终极飞行体验的逼真游戏。',
+        
+        // 新增的赛车游戏
+        'game-madalin-stunt-cars-pro': 'Madalin特技赛车专业版',
+        'game-madalin-stunt-cars-pro-desc': '你愿意体验奢华吗？3D驾驶游戏Madalin特技赛车专业版拥有出色的画面，带来逼真的体验。',
+        
+        'game-gta-simulator': 'GTA模拟器',
+        'game-gta-simulator-desc': '你知道著名的GTA游戏系列，对吧？现在在OnlineGames.io上遇见它的在线免费版本。',
+        
+        'game-escape-car': '逃脱汽车',
+        'game-escape-car-desc': '你还记得最初的侠盗猎车手吗？那种老式的俯视角混乱。想象一下，给它加上新鲜的粗糙3D画面。',
+        
+        'game-drift-hunters-pro': '漂移猎手专业版',
+        'game-drift-hunters-pro-desc': '你能听到引擎的咆哮吗？漂移猎手专业版是一款激动人心的3D游戏，为漂移和赛车爱好者提供高质量的画面。',
+        
+        'game-pixel-driver': '像素司机',
+        'game-pixel-driver-desc': '有时候，你只是渴望简单的东西。没有花哨的任务或紧张的任务。只是一辆像素汽车，一个彩色的城市，和自由漫游的权利。',
+        
+        'game-burnout-city': '燃烧之城',
+        'game-burnout-city-desc': '燃烧之城是一个永不结束的夜晚之地。爬坡城市的街道将成为你的游乐场。',
+        
+        'game-police-chase-drifter': '警察追逐漂移者',
+        'game-police-chase-drifter-desc': '收集金钱，高速驾驶逃脱警车。警察追逐漂移者将给你机会成为漂移冠军。',
+        
+        'game-monster-truck-race-arena': '怪物卡车竞技场',
+        'game-monster-truck-race-arena-desc': '喜欢巨大的轮子吗？你会喜欢的。启动引擎在怪物卡车竞技场，翻车是最快败北的方式！',
+        
+        'game-edys-car-simulator': 'Edy汽车模拟器',
+        'game-edys-car-simulator-desc': '你想观光吗？Edy汽车模拟器是一个可以自由在街道上漫游的游戏！',
+        
+        'game-super-car-driving': '超级汽车驾驶',
+        'game-super-car-driving-desc': '超级汽车驾驶是一款在线汽车游戏，你可以驾驶法拉利、兰博基尼、保时捷等高性能高端车型。',
+        
+        'game-mafia-getaway-cars': '黑手党逃跑车',
+        'game-mafia-getaway-cars-desc': '厌倦了那些重复的警察追逐游戏？想要扮演违法者？那就准备加入黑手党这款复古风格的汽车游戏！',
+        
+        // 新增的动作游戏
+        'game-masked-special-forces': '蒙面特种部队',
+        'game-masked-special-forces-desc': '蒙面特种部队是一款拥有大量自定义选项的多人第一人称射击游戏。',
+        
+        'game-stickman-parkour': '火柴人跑酷',
+        'game-stickman-parkour-desc': '火柴人跑酷是一款可以在浏览器上玩的在线平台游戏，拥抱易学难精的机制。',
+        
+        'game-five-nights-at-poppy': '波比的五夜',
+        'game-five-nights-at-poppy-desc': '你有没有在学校待到很晚或独自走过黑暗的走廊时感觉有什么在看着你？',
+        
+        'game-stickman-gta-city': '火柴人GTA城市',
+        'game-stickman-gta-city-desc': '你已经在网上挖掘了很久，寻找一个可以在浏览器上玩的免费GTA游戏。',
+        
+        'game-get-on-top': '爬到顶部',
+        'game-get-on-top-desc': '还记得你和兄弟摔跤数小时直到其中一人哭着向妈妈抱怨的日子吗？',
+        
+        'game-stickman-destruction': '火柴人毁灭',
+        'game-stickman-destruction-desc': '你能把一个虚拟角色分成多少部分？火柴人毁灭是一款以动作为导向的火柴人布娃娃游戏。',
+        
+        'game-rooftop-duel': '屋顶决斗',
+        'game-rooftop-duel-desc': '你能处理带有重力、布娃娃四肢和一堆过强武器的屋顶射击吗？',
+        
+        'game-kick-the-alien': '踢外星人',
+        'game-kick-the-alien-desc': '踢外星人是一款古怪的点击游戏，邪恶的外星人刚刚到达殖民你的星球。',
+        
+        // 新增的益智游戏
+        'game-capybara-clicker-pro': '水豚点击器专业版',
+        'game-capybara-clicker-pro-desc': '水豚点击器专业版是一款闲置点击游戏，你点击可爱的水豚收集水豚币。',
+        
+        'game-nova-clicker': '新星点击器',
+        'game-nova-clicker-desc': '新星点击器是一款在线闲置游戏，从一个单独的、笑脸新星开始，它的名字是FreezeNova。',
+        
+        'game-cookie-clicker-pro': '曲奇点击器专业版',
+        'game-cookie-clicker-pro-desc': '喜欢曲奇吗？想要创建互联网上最大的曲奇帝国？那么曲奇点击器专业版正是你的游戏！',
+        
+        // 新增的街机游戏
+        'game-basket-hoop': '篮球框',
+        'game-basket-hoop-desc': '在篮球框中，重力是你唯一的挑战，点击是你唯一的武器。',
         
         // 搜索相关
         'search-placeholder': '搜索您喜爱的游戏...',
@@ -693,7 +947,14 @@ function updateLanguageButton() {
     }
 }
 
-// 导出给其他脚本使用
+// 确保函数在全局作用域中可用
+window.translations = translations;
+window.switchLanguage = switchLanguage;
+window.initializeI18n = initializeI18n;
+window.applyTranslations = applyTranslations;
+window.updateLanguageButton = updateLanguageButton;
+
+// 导出给其他脚本使用（如果使用模块系统）
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { translations, switchLanguage, initializeI18n };
+    module.exports = { translations, switchLanguage, initializeI18n, applyTranslations, updateLanguageButton };
 } 
