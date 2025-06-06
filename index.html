@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="page-title">Online Gaming Center - Free Fun Games</title>
+    <meta name="description" content="Discover over 30 exciting free online games. Racing, Action, Puzzle, Arcade games and more. Play instantly on PC and mobile devices!">
+    <meta name="keywords" content="free games, online games, racing games, action games, puzzle games, arcade games">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- 页面加载动画 -->
+    <div id="pageLoader" class="page-loader">
+        <div class="loader-content">
+            <div class="loader-icon">
+                <i class="fas fa-gamepad"></i>
+            </div>
+            <div class="loader-text" data-i18n="loading-text">Loading Amazing Games...</div>
+            <div class="loader-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
     <header class="header">
         <div class="container">
             <div class="logo">
@@ -426,7 +445,39 @@
 
     <footer class="footer">
         <div class="container">
-            <p data-i18n="footer-text">&copy; 2024 Online Gaming Center. All games from OnlineGames.io</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-gamepad"></i>
+                        <span data-i18n="site-title">Game Center</span>
+                    </div>
+                    <p data-i18n="footer-desc">Your ultimate destination for free online gaming</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-i18n="footer-categories">Game Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="#racing" data-i18n="nav-racing">Racing Games</a></li>
+                        <li><a href="#action" data-i18n="nav-action">Action Games</a></li>
+                        <li><a href="#puzzle" data-i18n="nav-puzzle">Puzzle Games</a></li>
+                        <li><a href="#arcade" data-i18n="nav-arcade">Arcade Games</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-i18n="footer-info">Information</h4>
+                    <ul class="footer-links">
+                        <li><span data-i18n="footer-games-count">30+ Free Games</span></li>
+                        <li><span data-i18n="footer-devices">PC & Mobile Support</span></li>
+                        <li><span data-i18n="footer-languages">9 Languages</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 <span data-i18n="site-name">Online Gaming Center</span>. <span data-i18n="footer-text">All games from OnlineGames.io</span></p>
+                <div class="footer-social">
+                    <i class="fas fa-heart" style="color: #e74c3c;"></i>
+                    <span data-i18n="footer-made">Made with love for gamers</span>
+                </div>
+            </div>
         </div>
     </footer>
 

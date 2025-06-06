@@ -6,7 +6,15 @@ const translations = {
         'site-title': 'Game Center',
         'hero-title': 'Welcome to Free Online Gaming World',
         'hero-subtitle': 'Over 30 exciting games waiting for you to experience, supporting PC and mobile devices',
-        'footer-text': '© 2024 Online Gaming Center. All games from OnlineGames.io',
+        'footer-text': 'All games from OnlineGames.io',
+        'footer-desc': 'Your ultimate destination for free online gaming',
+        'footer-categories': 'Game Categories', 
+        'footer-info': 'Information',
+        'footer-games-count': '30+ Free Games',
+        'footer-devices': 'PC & Mobile Support',
+        'footer-languages': '9 Languages',
+        'footer-made': 'Made with love for gamers',
+        'site-name': 'Online Gaming Center',
         'modal-game-title': 'Game Title',
 
         // 导航菜单
@@ -127,6 +135,7 @@ const translations = {
         'game-fast-food-desc': 'Run your own burger restaurant and serve customers',
         
         // 游戏加载相关
+        'loading-text': 'Loading Amazing Games...',
         'game-loading-message': 'Due to browser security restrictions, the game will open in a new window for the best experience.',
         'open-game': 'Open Game',
         'try-embed': 'Try Here',
@@ -141,7 +150,15 @@ const translations = {
         'site-title': '游戏中心',
         'hero-title': '欢迎来到免费在线游戏世界',
         'hero-subtitle': '超过30款精彩游戏等你来体验，支持PC和移动设备',
-        'footer-text': '© 2024 在线游戏中心. 所有游戏均来自 OnlineGames.io',
+        'footer-text': '所有游戏均来自 OnlineGames.io',
+        'footer-desc': '您最终的免费在线游戏目的地',
+        'footer-categories': '游戏分类',
+        'footer-info': '信息',
+        'footer-games-count': '30+免费游戏',
+        'footer-devices': 'PC和移动设备支持',
+        'footer-languages': '9种语言',
+        'footer-made': '为游戏玩家用心制作',
+        'site-name': '在线游戏中心',
         'modal-game-title': '游戏标题',
 
         // 导航菜单
@@ -262,6 +279,7 @@ const translations = {
         'game-fast-food-desc': '经营自己的汉堡店，服务顾客',
         
         // 游戏加载相关
+        'loading-text': '正在加载精彩游戏...',
         'game-loading-message': '由于浏览器安全限制，游戏将在新窗口中打开以获得最佳体验。',
         'open-game': '打开游戏',
         'try-embed': '在此尝试',
@@ -276,7 +294,15 @@ const translations = {
         'site-title': '遊戲中心',
         'hero-title': '歡迎來到免費線上遊戲世界',
         'hero-subtitle': '超過30款精彩遊戲等你來體驗，支援PC和行動裝置',
-        'footer-text': '© 2024 線上遊戲中心. 所有遊戲均來自 OnlineGames.io',
+        'footer-text': '所有遊戲均來自 OnlineGames.io',
+        'footer-desc': '您最終的免費線上遊戲目的地',
+        'footer-categories': '遊戲分類',
+        'footer-info': '資訊',
+        'footer-games-count': '30+免費遊戲',
+        'footer-devices': 'PC和行動裝置支援',
+        'footer-languages': '9種語言',
+        'footer-made': '為遊戲玩家用心製作',
+        'site-name': '線上遊戲中心',
         'modal-game-title': '遊戲標題',
 
         // 导航菜单
@@ -330,7 +356,13 @@ const translations = {
         'game-apocalypse-truck': '末日卡車',
         'game-apocalypse-truck-desc': '在殭屍末日中駕駛裝甲卡車生存',
         'game-mini-cars': '迷你賽車',
-        'game-mini-cars-desc': '支援雙人對戰的3D迷你賽車遊戲'
+        'game-mini-cars-desc': '支援雙人對戰的3D迷你賽車遊戲',
+        
+        // 游戏加载相关
+        'loading-text': '正在載入精彩遊戲...',
+        'game-loading-message': '由於瀏覽器安全限制，遊戲將在新視窗中開啟以獲得最佳體驗。',
+        'open-game': '開啟遊戲',
+        'try-embed': '在此嘗試'
     },
 
     'ja': {
@@ -339,7 +371,15 @@ const translations = {
         'site-title': 'ゲームセンター',
         'hero-title': '無料オンラインゲームの世界へようこそ',
         'hero-subtitle': 'PC とモバイルデバイスに対応した30以上のエキサイティングなゲーム',
-        'footer-text': '© 2024 オンラインゲームセンター. すべてのゲームは OnlineGames.io から',
+        'footer-text': 'すべてのゲームは OnlineGames.io から',
+        'footer-desc': '無料オンラインゲームの究極の目的地',
+        'footer-categories': 'ゲームカテゴリ',
+        'footer-info': '情報',
+        'footer-games-count': '30+無料ゲーム',
+        'footer-devices': 'PC・モバイル対応',
+        'footer-languages': '9言語対応',
+        'footer-made': 'ゲーマーのために愛を込めて制作',
+        'site-name': 'オンラインゲームセンター',
         'modal-game-title': 'ゲームタイトル',
 
         // 导航菜单
@@ -356,7 +396,13 @@ const translations = {
         'category-puzzle': 'パズルゲーム',
         'category-arcade': 'アーケードゲーム',
         'category-girls': '女の子向けゲーム',
-        'category-simulation': 'シミュレーション'
+        'category-simulation': 'シミュレーション',
+        
+        // 游戏加载相关
+        'loading-text': '素晴らしいゲームを読み込み中...',
+        'game-loading-message': 'ブラウザのセキュリティ制限により、ゲームは新しいウィンドウで開きます。',
+        'open-game': 'ゲームを開く',
+        'try-embed': 'ここで試す'
     },
 
     'ko': {
@@ -365,7 +411,15 @@ const translations = {
         'site-title': '게임 센터',
         'hero-title': '무료 온라인 게임 세계에 오신 것을 환영합니다',
         'hero-subtitle': 'PC와 모바일 기기를 지원하는 30개 이상의 흥미진진한 게임',
-        'footer-text': '© 2024 온라인 게임 센터. 모든 게임은 OnlineGames.io 제공',
+        'footer-text': '모든 게임은 OnlineGames.io 제공',
+        'footer-desc': '무료 온라인 게임의 최고 목적지',
+        'footer-categories': '게임 카테고리',
+        'footer-info': '정보',
+        'footer-games-count': '30+ 무료 게임',
+        'footer-devices': 'PC 및 모바일 지원',
+        'footer-languages': '9개 언어',
+        'footer-made': '게이머를 위해 사랑으로 제작',
+        'site-name': '온라인 게임 센터',
         'modal-game-title': '게임 제목',
 
         // 导航菜单
@@ -382,7 +436,13 @@ const translations = {
         'category-puzzle': '퍼즐 게임',
         'category-arcade': '아케이드 게임',
         'category-girls': '여성 게임',
-        'category-simulation': '시뮬레이션'
+        'category-simulation': '시뮬레이션',
+        
+        // 游戏加载相关
+        'loading-text': '멋진 게임을 로딩 중...',
+        'game-loading-message': '브라우저 보안 제한으로 인해 게임이 새 창에서 열립니다.',
+        'open-game': '게임 열기',
+        'try-embed': '여기서 시도'
     },
 
     'es': {
@@ -391,7 +451,15 @@ const translations = {
         'site-title': 'Centro de Juegos',
         'hero-title': 'Bienvenido al Mundo de Juegos Online Gratis',
         'hero-subtitle': 'Más de 30 juegos emocionantes esperándote, compatible con PC y dispositivos móviles',
-        'footer-text': '© 2024 Centro de Juegos Online. Todos los juegos de OnlineGames.io',
+        'footer-text': 'Todos los juegos de OnlineGames.io',
+        'footer-desc': 'Tu destino definitivo para juegos online gratis',
+        'footer-categories': 'Categorías de Juegos',
+        'footer-info': 'Información',
+        'footer-games-count': '30+ Juegos Gratis',
+        'footer-devices': 'Soporte PC y Móvil',
+        'footer-languages': '9 Idiomas',
+        'footer-made': 'Hecho con amor para gamers',
+        'site-name': 'Centro de Juegos Online',
         'modal-game-title': 'Título del Juego',
 
         // 导航菜单
@@ -408,7 +476,13 @@ const translations = {
         'category-puzzle': 'Juegos de Puzzle',
         'category-arcade': 'Juegos Arcade',
         'category-girls': 'Juegos para Chicas',
-        'category-simulation': 'Simulación'
+        'category-simulation': 'Simulación',
+        
+        // 游戏加载相关
+        'loading-text': 'Cargando Juegos Increíbles...',
+        'game-loading-message': 'Debido a restricciones de seguridad del navegador, el juego se abrirá en una nueva ventana.',
+        'open-game': 'Abrir Juego',
+        'try-embed': 'Probar Aquí'
     },
 
     'fr': {
@@ -417,7 +491,15 @@ const translations = {
         'site-title': 'Centre de Jeux',
         'hero-title': 'Bienvenue dans le Monde des Jeux en Ligne Gratuits',
         'hero-subtitle': 'Plus de 30 jeux passionnants vous attendent, compatible PC et mobile',
-        'footer-text': '© 2024 Centre de Jeux en Ligne. Tous les jeux de OnlineGames.io',
+        'footer-text': 'Tous les jeux de OnlineGames.io',
+        'footer-desc': 'Votre destination ultime pour les jeux en ligne gratuits',
+        'footer-categories': 'Catégories de Jeux',
+        'footer-info': 'Informations',
+        'footer-games-count': '30+ Jeux Gratuits',
+        'footer-devices': 'Support PC et Mobile',
+        'footer-languages': '9 Langues',
+        'footer-made': 'Fait avec amour pour les gamers',
+        'site-name': 'Centre de Jeux en Ligne',
         'modal-game-title': 'Titre du Jeu',
 
         // 导航菜单
@@ -443,7 +525,15 @@ const translations = {
         'site-title': 'Spielezentrum',
         'hero-title': 'Willkommen in der Welt der kostenlosen Online-Spiele',
         'hero-subtitle': 'Über 30 aufregende Spiele warten auf Sie, unterstützt PC und mobile Geräte',
-        'footer-text': '© 2024 Online Gaming Center. Alle Spiele von OnlineGames.io',
+        'footer-text': 'Alle Spiele von OnlineGames.io',
+        'footer-desc': 'Ihr ultimatives Ziel für kostenlose Online-Spiele',
+        'footer-categories': 'Spielkategorien',
+        'footer-info': 'Informationen',
+        'footer-games-count': '30+ Kostenlose Spiele',
+        'footer-devices': 'PC und Mobile Unterstützung',
+        'footer-languages': '9 Sprachen',
+        'footer-made': 'Mit Liebe für Gamer gemacht',
+        'site-name': 'Online Gaming Center',
         'modal-game-title': 'Spieltitel',
 
         // 导航菜单
@@ -469,7 +559,15 @@ const translations = {
         'site-title': 'Игровой Центр',
         'hero-title': 'Добро пожаловать в мир бесплатных онлайн игр',
         'hero-subtitle': 'Более 30 увлекательных игр ждут вас, поддерживает ПК и мобильные устройства',
-        'footer-text': '© 2024 Центр Онлайн Игр. Все игры от OnlineGames.io',
+        'footer-text': 'Все игры от OnlineGames.io',
+        'footer-desc': 'Ваше идеальное место для бесплатных онлайн игр',
+        'footer-categories': 'Категории Игр',
+        'footer-info': 'Информация',
+        'footer-games-count': '30+ Бесплатных Игр',
+        'footer-devices': 'Поддержка ПК и Мобильных',
+        'footer-languages': '9 Языков',
+        'footer-made': 'Сделано с любовью для геймеров',
+        'site-name': 'Центр Онлайн Игр',
         'modal-game-title': 'Название Игры',
 
         // 导航菜单

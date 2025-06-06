@@ -1,3 +1,16 @@
+// 页面加载完成处理
+window.addEventListener('load', function() {
+    const pageLoader = document.getElementById('pageLoader');
+    if (pageLoader) {
+        setTimeout(() => {
+            pageLoader.classList.add('hide');
+            setTimeout(() => {
+                pageLoader.remove();
+            }, 500);
+        }, 1500); // 显示加载动画1.5秒
+    }
+});
+
 // DOM 元素
 const gameCards = document.querySelectorAll('.game-card');
 const gameModal = document.getElementById('gameModal');
