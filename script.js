@@ -22,6 +22,9 @@ const nav = document.querySelector('.nav');
 const languageBtn = document.getElementById('languageBtn');
 const languageDropdown = document.getElementById('languageDropdown');
 const currentLangElement = document.getElementById('currentLang');
+const gameSearchInput = document.getElementById('gameSearch');
+const searchClearBtn = document.getElementById('searchClear');
+const searchSuggestions = document.getElementById('searchSuggestions');
 
 // 游戏备用源配置
 const gameBackupSources = {
@@ -37,32 +40,222 @@ const gameBackupSources = {
     // 可以根据需要添加更多备用源
 };
 
-// 游戏数据映射
-const gameData = {
-    'https://cloud.onlinegames.io/games/2021/1/apocalypse-truck/index-og.html': 'Apocalypse Truck',
-    'https://cloud.onlinegames.io/games/2021/unity/mini-cars-racing/index-og.html': '迷你赛车',
-    'https://www.onlinegames.io/games/2024/unity/drift-king/index.html': '漂移之王',
-    'https://www.onlinegames.io/games/2022/unity/highway-traffic/index.html': '高速公路交通',
-    'https://www.onlinegames.io/games/2021/1/monster-truck-racing/index.html': '怪物卡车竞速',
-    'https://www.onlinegames.io/games/2022/construct/144/truck-racing/index.html': '卡车运输',
-    'https://www.onlinegames.io/games/2022/construct/151/tank-racing/index.html': '坦克竞速',
-    'https://cloud.onlinegames.io/games/2022/construct/92/kick-the-pirate/index-og.html': '踢海盗',
-    'https://www.onlinegames.io/games/2022/construct/164/treasure-hunter/index.html': '宝藏猎人',
-    'https://www.onlinegames.io/games/2023/unity3/hook-wars/index.html': '钩子大战',
-    'https://www.onlinegames.io/games/2021/4/mr-space-bullet/index.html': '太空子弹先生',
-    'https://www.onlinegames.io/games/2025/html/solitaire/index-og.html#pyramid': '金字塔纸牌',
-    'https://www.onlinegames.io/games/2025/html/solitaire/index-og.html': '经典纸牌',
-    'https://www.onlinegames.io/games/2022/unity/sweet-sugar-match/index.html': '甜蜜糖果消消乐',
-    'https://www.onlinegames.io/games/2022/construct/147/draw-the-bird-path/index.html': '画鸟儿回家路',
-    'https://www.onlinegames.io/games/2021/unity/stack-fire-ball/index.html': '堆叠火球',
-    'https://www.onlinegames.io/games/2022/unity2/egg-helix/index.html': '鸡蛋螺旋塔',
-    'https://www.onlinegames.io/games/2021/unity2/crazy-ball-adventures/index.html': '疯狂球大冒险',
-    'https://www.onlinegames.io/games/2021/4/jackpot-casino/index.html': '大奖赌场',
-    'https://cloud.onlinegames.io/games/2021/1/julie-beauty-salon/index-og.html': '朱莉美容院',
-    'https://www.onlinegames.io/games/2021/3/love-tester/index.html': '爱情测试仪',
-    'https://www.onlinegames.io/games/2021/2/owl-and-rabbit-fashion/index.html': '猫头鹰兔子时装',
-    'https://cloud.onlinegames.io/games/2025/unity/fast-food-rush/index-og.html': '快餐店大忙'
-};
+// 完整的游戏数据库
+const gamesDatabase = [
+    {
+        id: 'apocalypse-truck',
+        url: 'https://cloud.onlinegames.io/games/2021/1/apocalypse-truck/index-og.html',
+        image: 'https://www.onlinegames.io/media/posts/1015/responsive/apocalypse-truck-xs.jpg',
+        titleKey: 'game-apocalypse-truck',
+        descKey: 'game-apocalypse-truck-desc',
+        tags: ['single', 'racing', 'zombie'],
+        category: 'racing'
+    },
+    {
+        id: 'mini-cars',
+        url: 'https://cloud.onlinegames.io/games/2021/unity/mini-cars-racing/index-og.html',
+        image: 'https://www.onlinegames.io/media/posts/1010/responsive/Mini-Cars-Racing-xs.jpg',
+        titleKey: 'game-mini-cars',
+        descKey: 'game-mini-cars-desc',
+        tags: ['multiplayer', '3d', 'racing'],
+        category: 'racing'
+    },
+    {
+        id: 'drift-king',
+        url: 'https://www.onlinegames.io/games/2024/unity/drift-king/index.html',
+        image: 'https://www.onlinegames.io/media/posts/729/responsive/Drift-King-xs.jpg',
+        titleKey: 'game-drift-king',
+        descKey: 'game-drift-king-desc',
+        tags: ['3d', 'drift', 'multiplayer'],
+        category: 'racing'
+    },
+    {
+        id: 'highway-traffic',
+        url: 'https://www.onlinegames.io/games/2022/unity/highway-traffic/index.html',
+        image: 'https://www.onlinegames.io/media/posts/32/responsive/Highway-Traffic-2-xs.jpg',
+        titleKey: 'game-highway-traffic',
+        descKey: 'game-highway-traffic-desc',
+        tags: ['single', '3d', 'racing'],
+        category: 'racing'
+    },
+    {
+        id: 'monster-truck',
+        url: 'https://www.onlinegames.io/games/2021/1/monster-truck-racing/index.html',
+        image: 'https://www.onlinegames.io/media/posts/826/responsive/Monster-Truck-Racing-xs.jpg',
+        titleKey: 'game-monster-truck',
+        descKey: 'game-monster-truck-desc',
+        tags: ['single', 'truck', 'racing'],
+        category: 'racing'
+    },
+    {
+        id: 'truck-racing',
+        url: 'https://www.onlinegames.io/games/2022/construct/144/truck-racing/index.html',
+        image: 'https://www.onlinegames.io/media/posts/712/responsive/Truck-Racing-xs.jpg',
+        titleKey: 'game-truck-racing',
+        descKey: 'game-truck-racing-desc',
+        tags: ['single', 'truck', 'transport'],
+        category: 'racing'
+    },
+    {
+        id: 'tank-racing',
+        url: 'https://www.onlinegames.io/games/2022/construct/151/tank-racing/index.html',
+        image: 'https://www.onlinegames.io/media/posts/484/responsive/Tank-Racing-Online-xs.jpg',
+        titleKey: 'game-tank-racing',
+        descKey: 'game-tank-racing-desc',
+        tags: ['multiplayer', 'tank', 'military'],
+        category: 'racing'
+    },
+    {
+        id: 'kick-pirate',
+        url: 'https://cloud.onlinegames.io/games/2022/construct/92/kick-the-pirate/index-og.html',
+        image: 'https://www.onlinegames.io/media/posts/1012/responsive/Kick-The-Pirate-xs.jpg',
+        titleKey: 'game-kick-pirate',
+        descKey: 'game-kick-pirate-desc',
+        tags: ['single', 'action', 'battle'],
+        category: 'action'
+    },
+    {
+        id: 'treasure-hunter',
+        url: 'https://www.onlinegames.io/games/2022/construct/164/treasure-hunter/index.html',
+        image: 'https://www.onlinegames.io/media/posts/812/responsive/Treasure-Hunter-xs.jpg',
+        titleKey: 'game-treasure-hunter',
+        descKey: 'game-treasure-hunter-desc',
+        tags: ['single', 'adventure', 'action'],
+        category: 'action'
+    },
+    {
+        id: 'hook-wars',
+        url: 'https://www.onlinegames.io/games/2023/unity3/hook-wars/index.html',
+        image: 'https://www.onlinegames.io/media/posts/610/responsive/Hook-Wars-xs.jpg',
+        titleKey: 'game-hook-wars',
+        descKey: 'game-hook-wars-desc',
+        tags: ['multiplayer', '3d', 'battle'],
+        category: 'action'
+    },
+    {
+        id: 'space-bullet',
+        url: 'https://www.onlinegames.io/games/2021/4/mr-space-bullet/index.html',
+        image: 'https://www.onlinegames.io/media/posts/825/responsive/Mr-Space-Bullet-xs.jpg',
+        titleKey: 'game-space-bullet',
+        descKey: 'game-space-bullet-desc',
+        tags: ['single', 'shooting', 'space'],
+        category: 'action'
+    },
+    {
+        id: 'pyramid-solitaire',
+        url: 'https://www.onlinegames.io/games/2025/html/solitaire/index-og.html#pyramid',
+        image: 'https://www.onlinegames.io/media/posts/891/responsive/Pyramid-Solitaire-xs.jpg',
+        titleKey: 'game-pyramid-solitaire',
+        descKey: 'game-pyramid-solitaire-desc',
+        tags: ['single', 'card', 'puzzle'],
+        category: 'puzzle'
+    },
+    {
+        id: 'solitaire',
+        url: 'https://www.onlinegames.io/games/2025/html/solitaire/index-og.html',
+        image: 'https://www.onlinegames.io/media/posts/671/responsive/Classic-Solitaire-xs.jpg',
+        titleKey: 'game-solitaire',
+        descKey: 'game-solitaire-desc',
+        tags: ['single', 'card', 'puzzle'],
+        category: 'puzzle'
+    },
+    {
+        id: 'sugar-match',
+        url: 'https://www.onlinegames.io/games/2022/unity/sweet-sugar-match/index.html',
+        image: 'https://www.onlinegames.io/media/posts/576/responsive/Sweet-Sugar-Match-xs.jpg',
+        titleKey: 'game-sugar-match',
+        descKey: 'game-sugar-match-desc',
+        tags: ['single', 'match', 'puzzle'],
+        category: 'puzzle'
+    },
+    {
+        id: 'bird-path',
+        url: 'https://www.onlinegames.io/games/2022/construct/147/draw-the-bird-path/index.html',
+        image: 'https://www.onlinegames.io/media/posts/587/responsive/Draw-the-Bird-Path-xs.jpg',
+        titleKey: 'game-bird-path',
+        descKey: 'game-bird-path-desc',
+        tags: ['single', 'puzzle', 'logic'],
+        category: 'puzzle'
+    },
+    {
+        id: 'stack-fire',
+        url: 'https://www.onlinegames.io/games/2021/unity/stack-fire-ball/index.html',
+        image: 'https://www.onlinegames.io/media/posts/184/responsive/Stack-Fire-Ball-Game-xs.jpg',
+        titleKey: 'game-stack-fire',
+        descKey: 'game-stack-fire-desc',
+        tags: ['single', '3d', 'skill'],
+        category: 'arcade'
+    },
+    {
+        id: 'egg-helix',
+        url: 'https://www.onlinegames.io/games/2022/unity2/egg-helix/index.html',
+        image: 'https://www.onlinegames.io/media/posts/604/responsive/Egg-Helix-xs.jpg',
+        titleKey: 'game-egg-helix',
+        descKey: 'game-egg-helix-desc',
+        tags: ['single', '3d', 'arcade'],
+        category: 'arcade'
+    },
+    {
+        id: 'crazy-ball',
+        url: 'https://www.onlinegames.io/games/2021/unity2/crazy-ball-adventures/index.html',
+        image: 'https://www.onlinegames.io/media/posts/760/responsive/Crazy-Ball-Game-xs.jpg',
+        titleKey: 'game-crazy-ball',
+        descKey: 'game-crazy-ball-desc',
+        tags: ['single', 'arcade', 'skill'],
+        category: 'arcade'
+    },
+    {
+        id: 'jackpot-casino',
+        url: 'https://www.onlinegames.io/games/2021/4/jackpot-casino/index.html',
+        image: 'https://www.onlinegames.io/media/posts/635/responsive/Jackpot-Casino-xs.jpg',
+        titleKey: 'game-jackpot-casino',
+        descKey: 'game-jackpot-casino-desc',
+        tags: ['single', 'simulation', 'casino'],
+        category: 'arcade'
+    },
+    {
+        id: 'julie-beauty',
+        url: 'https://cloud.onlinegames.io/games/2021/1/julie-beauty-salon/index-og.html',
+        image: 'https://www.onlinegames.io/media/posts/1011/responsive/Julie-Beauty-Salon-xs.jpg',
+        titleKey: 'game-julie-beauty',
+        descKey: 'game-julie-beauty-desc',
+        tags: ['girls', 'makeup', 'simulation'],
+        category: 'girls'
+    },
+    {
+        id: 'love-tester',
+        url: 'https://www.onlinegames.io/games/2021/3/love-tester/index.html',
+        image: 'https://www.onlinegames.io/media/posts/152/responsive/love-tester-xs.jpg',
+        titleKey: 'game-love-tester',
+        descKey: 'game-love-tester-desc',
+        tags: ['single', 'love', 'girls'],
+        category: 'girls'
+    },
+    {
+        id: 'owl-rabbit',
+        url: 'https://www.onlinegames.io/games/2021/2/owl-and-rabbit-fashion/index.html',
+        image: 'https://www.onlinegames.io/media/posts/475/responsive/Owl-and-Rabbit-Fashion-xs.jpg',
+        titleKey: 'game-owl-rabbit',
+        descKey: 'game-owl-rabbit-desc',
+        tags: ['fashion', 'girls', 'simulation'],
+        category: 'girls'
+    },
+    {
+        id: 'fast-food',
+        url: 'https://cloud.onlinegames.io/games/2025/unity/fast-food-rush/index-og.html',
+        image: 'https://www.onlinegames.io/media/posts/979/responsive/fast-food-rush-xs.jpg',
+        titleKey: 'game-fast-food',
+        descKey: 'game-fast-food-desc',
+        tags: ['single', 'cooking', 'simulation'],
+        category: 'sports'
+    }
+];
+
+// 游戏数据映射（保持向后兼容）
+const gameData = {};
+gamesDatabase.forEach(game => {
+    gameData[game.url] = game.titleKey;
+});
 
 // 初始化事件监听器
 function initializeEventListeners() {
@@ -149,6 +342,27 @@ function initializeEventListeners() {
             });
         });
     }
+    
+    // 搜索功能事件
+    if (gameSearchInput && searchClearBtn && searchSuggestions) {
+            // 搜索输入事件
+    gameSearchInput.addEventListener('input', debounce(handleSearchInput, 200));
+        gameSearchInput.addEventListener('focus', handleSearchFocus);
+        gameSearchInput.addEventListener('blur', handleSearchBlur);
+        
+        // 清除搜索按钮
+        searchClearBtn.addEventListener('click', clearSearch);
+        
+        // 点击外部关闭搜索建议
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.search-container')) {
+                hideSuggestions();
+            }
+        });
+        
+        // 键盘导航支持
+        gameSearchInput.addEventListener('keydown', handleSearchKeydown);
+    }
 }
 
 // 打开游戏模态框
@@ -183,11 +397,11 @@ function showGameLoadingDialog(embedUrl, gameName) {
     dialog.innerHTML = `
         <div class="dialog-overlay"></div>
         <div class="dialog-content">
+            <button class="dialog-close" onclick="closeGameDialog()">
+                <i class="fas fa-times"></i>
+            </button>
             <div class="dialog-header">
                 <h3>${gameName}</h3>
-                <button class="dialog-close" onclick="closeGameDialog()">
-                    <i class="fas fa-times"></i>
-                </button>
             </div>
             <div class="dialog-body">
                 <div class="game-preview">
@@ -534,7 +748,6 @@ function debounce(func, wait) {
     };
 }
 
-// 优化滚动性能
 let ticking = false;
 
 function updateScrollPosition() {
@@ -544,7 +757,272 @@ function updateScrollPosition() {
 
 window.addEventListener('scroll', () => {
     if (!ticking) {
-        requestAnimationFrame(updateScrollPosition);
+        window.requestAnimationFrame(updateScrollPosition);
         ticking = true;
     }
-}); 
+});
+
+// 搜索功能变量
+let currentSuggestionIndex = -1;
+let currentSearchResults = [];
+
+// 处理搜索输入
+function handleSearchInput(e) {
+    const query = e.target.value.trim();
+    
+    // 显示/隐藏清除按钮
+    if (query) {
+        searchClearBtn.style.display = 'block';
+    } else {
+        searchClearBtn.style.display = 'none';
+        hideSuggestions();
+        clearSearchResults();
+        return;
+    }
+    
+    // 执行搜索
+    if (query.length >= 2) {
+        const results = searchGames(query);
+        showSuggestions(results);
+        highlightSearchResults(query);
+    } else {
+        hideSuggestions();
+        clearSearchResults();
+    }
+}
+
+// 搜索游戏
+function searchGames(query) {
+    const normalizedQuery = query.toLowerCase();
+    const currentLang = localStorage.getItem('preferred-language') || 'en';
+    
+    console.log('Searching for:', normalizedQuery, 'in language:', currentLang); // 临时调试
+    console.log('Database size:', gamesDatabase.length); // 临时调试
+    
+    const results = gamesDatabase.filter(game => {
+        // 获取翻译后的游戏标题和描述
+        const title = getTranslation(game.titleKey, currentLang).toLowerCase();
+        const desc = getTranslation(game.descKey, currentLang).toLowerCase();
+        
+        // 搜索标题、描述和标签
+        const titleMatch = title.includes(normalizedQuery);
+        const descMatch = desc.includes(normalizedQuery);
+        const tagMatch = game.tags.some(tag => {
+            const tagTranslation = getTranslation(`tag-${tag}`, currentLang).toLowerCase();
+            return tagTranslation.includes(normalizedQuery) || tag.includes(normalizedQuery);
+        });
+        const categoryMatch = getTranslation(`category-${game.category}`, currentLang).toLowerCase().includes(normalizedQuery);
+        
+        return titleMatch || descMatch || tagMatch || categoryMatch;
+    }).slice(0, 6); // 限制结果数量
+    
+    console.log('Search results count:', results.length); // 临时调试
+    return results;
+}
+
+// 获取翻译文本
+function getTranslation(key, lang) {
+    if (typeof translations !== 'undefined' && translations[lang] && translations[lang][key]) {
+        return translations[lang][key];
+    }
+    return key; // 如果没有翻译，返回键名
+}
+
+// 显示搜索建议
+function showSuggestions(results) {
+    console.log('showSuggestions called with', results.length, 'results'); // 临时调试
+    currentSearchResults = results;
+    currentSuggestionIndex = -1;
+    
+    if (results.length === 0) {
+        console.log('No results, hiding suggestions'); // 临时调试
+        hideSuggestions();
+        return;
+    }
+    
+    const currentLang = localStorage.getItem('preferred-language') || 'en';
+    
+    const suggestionsHTML = results.map((game, index) => {
+        const title = getTranslation(game.titleKey, currentLang);
+        const desc = getTranslation(game.descKey, currentLang);
+        const tags = game.tags.map(tag => `<span class="suggestion-tag">${getTranslation(`tag-${tag}`, currentLang)}</span>`).join('');
+        
+        return `
+            <div class="suggestion-item" data-index="${index}" data-game-url="${game.url}" data-game-title="${title}">
+                <img src="${game.image}" alt="${title}" class="suggestion-game-image" loading="lazy">
+                <div class="suggestion-game-info">
+                    <div class="suggestion-game-title">${title}</div>
+                    <div class="suggestion-game-desc">${desc}</div>
+                    <div class="suggestion-game-tags">${tags}</div>
+                </div>
+            </div>
+        `;
+    }).join('');
+    
+    // 添加查看所有结果的选项
+    const viewAllResultsHTML = results.length > 0 ? `
+        <div class="view-all-results" onclick="scrollToSearchResults()">
+            <i class="fas fa-eye"></i>
+            <span>查看页面中的搜索结果 (${results.length}个)</span>
+        </div>
+    ` : '';
+    
+    searchSuggestions.innerHTML = suggestionsHTML + viewAllResultsHTML;
+    searchSuggestions.classList.add('show');
+    
+    // 添加点击事件
+    searchSuggestions.querySelectorAll('.suggestion-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const gameUrl = this.getAttribute('data-game-url');
+            const gameTitle = this.getAttribute('data-game-title');
+            openGameModal(gameUrl, gameTitle);
+            hideSuggestions();
+            gameSearchInput.blur();
+        });
+    });
+}
+
+// 隐藏搜索建议
+function hideSuggestions() {
+    searchSuggestions.classList.remove('show');
+    currentSuggestionIndex = -1;
+}
+
+// 清除搜索
+function clearSearch() {
+    gameSearchInput.value = '';
+    searchClearBtn.style.display = 'none';
+    hideSuggestions();
+    clearSearchResults();
+    gameSearchInput.focus();
+}
+
+// 处理搜索焦点
+function handleSearchFocus() {
+    const query = gameSearchInput.value.trim();
+    if (query.length >= 2) {
+        const results = searchGames(query);
+        showSuggestions(results);
+    }
+}
+
+// 处理搜索失焦
+function handleSearchBlur() {
+    // 延迟隐藏，以便点击建议项
+    setTimeout(() => {
+        if (!document.activeElement || !document.activeElement.closest('.search-suggestions')) {
+            hideSuggestions();
+        }
+    }, 200);
+}
+
+// 键盘导航
+function handleSearchKeydown(e) {
+    const suggestions = searchSuggestions.querySelectorAll('.suggestion-item');
+    
+    switch(e.key) {
+        case 'ArrowDown':
+            e.preventDefault();
+            currentSuggestionIndex = Math.min(currentSuggestionIndex + 1, suggestions.length - 1);
+            updateSuggestionHighlight(suggestions);
+            break;
+            
+        case 'ArrowUp':
+            e.preventDefault();
+            currentSuggestionIndex = Math.max(currentSuggestionIndex - 1, -1);
+            updateSuggestionHighlight(suggestions);
+            break;
+            
+        case 'Enter':
+            e.preventDefault();
+            if (currentSuggestionIndex >= 0 && suggestions[currentSuggestionIndex]) {
+                suggestions[currentSuggestionIndex].click();
+            }
+            break;
+            
+        case 'Escape':
+            hideSuggestions();
+            gameSearchInput.blur();
+            break;
+    }
+}
+
+// 更新建议高亮
+function updateSuggestionHighlight(suggestions) {
+    suggestions.forEach((item, index) => {
+        if (index === currentSuggestionIndex) {
+            item.style.background = 'linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2))';
+            item.scrollIntoView({ block: 'nearest' });
+        } else {
+            item.style.background = '';
+        }
+    });
+}
+
+// 高亮搜索结果
+function highlightSearchResults(query) {
+    if (!query || query.length < 2) {
+        clearSearchResults();
+        return;
+    }
+    
+    const results = searchGames(query);
+    const gameCards = document.querySelectorAll('.game-card');
+    
+    gameCards.forEach(card => {
+        const embedUrl = card.getAttribute('data-embed');
+        const game = gamesDatabase.find(g => g.url === embedUrl);
+        
+        if (game && results.some(r => r.id === game.id)) {
+            card.style.border = '2px solid #667eea';
+            card.style.boxShadow = '0 15px 40px rgba(102, 126, 234, 0.3)';
+            card.style.transform = 'scale(1.02)';
+        } else {
+            card.style.opacity = '0.6';
+            card.style.transform = 'scale(0.98)';
+        }
+    });
+    
+    // 注释掉自动滚动，避免在输入搜索时自动跳转
+    // if (results.length > 0) {
+    //     const firstResultCard = Array.from(gameCards).find(card => {
+    //         const embedUrl = card.getAttribute('data-embed');
+    //         const game = gamesDatabase.find(g => g.url === embedUrl);
+    //         return game && game.id === results[0].id;
+    //     });
+    //     
+    //     if (firstResultCard) {
+    //         firstResultCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    //     }
+    // }
+}
+
+// 清除搜索结果高亮
+function clearSearchResults() {
+    const gameCards = document.querySelectorAll('.game-card');
+    gameCards.forEach(card => {
+        card.style.border = '';
+        card.style.boxShadow = '';
+        card.style.opacity = '';
+        card.style.transform = '';
+    });
+}
+
+// 滚动到搜索结果
+function scrollToSearchResults() {
+    hideSuggestions();
+    gameSearchInput.blur();
+    
+    if (currentSearchResults.length > 0) {
+        const gameCards = document.querySelectorAll('.game-card');
+        const firstResultCard = Array.from(gameCards).find(card => {
+            const embedUrl = card.getAttribute('data-embed');
+            const game = gamesDatabase.find(g => g.url === embedUrl);
+            return game && currentSearchResults.some(r => r.id === game.id);
+        });
+        
+        if (firstResultCard) {
+            firstResultCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+}

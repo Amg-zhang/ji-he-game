@@ -134,6 +134,11 @@ const translations = {
         'game-fast-food': 'Fast Food Rush',
         'game-fast-food-desc': 'Run your own burger restaurant and serve customers',
         
+        // 搜索相关
+        'search-placeholder': 'Search for your favorite games...',
+        'search-no-results': 'No games found',
+        'search-no-results-desc': 'Try different keywords or browse our game categories',
+        
         // 游戏加载相关
         'loading-text': 'Loading Amazing Games...',
         'game-loading-message': 'Due to browser security restrictions, the game will open in a new window for the best experience.',
@@ -278,6 +283,11 @@ const translations = {
         'game-fast-food': '快餐店大忙',
         'game-fast-food-desc': '经营自己的汉堡店，服务顾客',
         
+        // 搜索相关
+        'search-placeholder': '搜索您喜爱的游戏...',
+        'search-no-results': '未找到游戏',
+        'search-no-results-desc': '请尝试不同的关键词或浏览我们的游戏分类',
+        
         // 游戏加载相关
         'loading-text': '正在加载精彩游戏...',
         'game-loading-message': '由于浏览器安全限制，游戏将在新窗口中打开以获得最佳体验。',
@@ -358,6 +368,11 @@ const translations = {
         'game-mini-cars': '迷你賽車',
         'game-mini-cars-desc': '支援雙人對戰的3D迷你賽車遊戲',
         
+        // 搜索相关
+        'search-placeholder': '搜尋您喜愛的遊戲...',
+        'search-no-results': '未找到遊戲',
+        'search-no-results-desc': '請嘗試不同的關鍵詞或瀏覽我們的遊戲分類',
+        
         // 游戏加载相关
         'loading-text': '正在載入精彩遊戲...',
         'game-loading-message': '由於瀏覽器安全限制，遊戲將在新視窗中開啟以獲得最佳體驗。',
@@ -398,6 +413,11 @@ const translations = {
         'category-girls': '女の子向けゲーム',
         'category-simulation': 'シミュレーション',
         
+        // 搜索相关
+        'search-placeholder': 'お気に入りのゲームを検索...',
+        'search-no-results': 'ゲームが見つかりません',
+        'search-no-results-desc': '異なるキーワードを試すか、ゲームカテゴリを閲覧してください',
+        
         // 游戏加载相关
         'loading-text': '素晴らしいゲームを読み込み中...',
         'game-loading-message': 'ブラウザのセキュリティ制限により、ゲームは新しいウィンドウで開きます。',
@@ -437,6 +457,11 @@ const translations = {
         'category-arcade': '아케이드 게임',
         'category-girls': '여성 게임',
         'category-simulation': '시뮬레이션',
+        
+        // 搜索相关
+        'search-placeholder': '좋아하는 게임을 검색하세요...',
+        'search-no-results': '게임을 찾을 수 없습니다',
+        'search-no-results-desc': '다른 키워드를 시도하거나 게임 카테고리를 둘러보세요',
         
         // 游戏加载相关
         'loading-text': '멋진 게임을 로딩 중...',
@@ -632,6 +657,17 @@ function applyTranslations() {
             } else {
                 element.textContent = translation;
             }
+        }
+    });
+    
+    // 处理占位符翻译
+    const elementsWithPlaceholder = document.querySelectorAll('[data-i18n-placeholder]');
+    elementsWithPlaceholder.forEach(element => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        const translation = translations[currentLanguage]?.[key];
+        
+        if (translation) {
+            element.placeholder = translation;
         }
     });
     
